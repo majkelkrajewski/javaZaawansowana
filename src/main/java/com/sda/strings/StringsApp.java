@@ -11,6 +11,17 @@ public class StringsApp {
         operation = new TextDuplicate();
         System.out.println(operation.modify(text));
 
+        StringOperation appendTextOperation = new AppendText();
+        System.out.println(appendTextOperation.modify("Karol"));
+
+        StringOperation appendTextOperationAnonClass = new StringOperation() {
+            @Override
+            public String modify(String text) {
+                return "MODIFIED BY ANONYMUS CLASS: " + text;
+            }
+        };
+        System.out.println(appendTextOperationAnonClass.modify("Karol"));
+
     }
 
     public static void modifyAndPrint(String text, StringOperation operation) {
